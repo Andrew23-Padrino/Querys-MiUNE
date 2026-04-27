@@ -1,0 +1,8 @@
+SELECT 
+    CONCAT(u.nombre, ' ', u.apellido) AS "Estudiante",
+    COUNT(i.pk_inscripcion) as "Total Inscripciones"
+FROM tbl_inscripciones i
+JOIN tbl_usuariosgrupos ug ON i.fk_usuariogrupo = ug.pk_usuariogrupo
+JOIN tbl_usuarios u ON ug.fk_usuario = u.pk_usuario
+WHERE u.pk_usuario = TU_CEDULA
+GROUP BY u.nombre, u.apellido;
