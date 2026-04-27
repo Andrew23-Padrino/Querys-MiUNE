@@ -1,11 +1,11 @@
-select concat(tu2.nombre, ' ' ,tu2.apellido) as "NOMBRE COMPLETO", ti.numeropago, tu2.pk_usuario as "cedula", tu2.correo /*tu2.nombre|| ' ' ||tu2.apellido */  
-from tbl_inscripciones ti
-join tbl_usuariosgrupos tu 
-on ti.fk_usuariogrupo = tu.pk_usuariogrupo 
-join tbl_usuarios tu2 
-on tu.fk_usuario = tu2.pk_usuario 
-where fk_periodo = 164 and fk_usuario = 28507012
-
-
-select * from tbl_usuariosgrupos tu 
-where fk_usuario = 28507012
+SELECT 
+    CONCAT(tu2.nombre, ' ' ,tu2.apellido) as "NOMBRE COMPLETO", 
+    escuela.valor as "ESCUELA",
+    ti.numeropago, 
+    tu2.pk_usuario as "cedula", 
+    tu2.correo 
+FROM tbl_inscripciones ti
+JOIN tbl_usuariosgrupos tu ON ti.fk_usuariogrupo = tu.pk_usuariogrupo 
+JOIN tbl_usuarios tu2 ON tu.fk_usuario = tu2.pk_usuario 
+JOIN tbl_atributos escuela ON ti.fk_atributo = escuela.pk_atributo 
+WHERE ti.fk_periodo = 160 AND tu2.pk_usuario = 28507012;
