@@ -6,4 +6,4 @@ JOIN tbl_periodos p ON i.fk_periodo = p.pk_periodo
 JOIN tbl_pensums pen ON i.fk_pensum = pen.pk_pensum
 JOIN tbl_atributos esc ON pen.fk_escuela = esc.pk_atributo
 JOIN tbl_estructuras sede ON i.fk_estructura = sede.pk_estructura
-WHERE u.pk_usuario = TU_CEDULA AND p.pk_periodo = 164;
+WHERE u.pk_usuario = TU_CEDULA AND p.pk_periodo = N°_periodo;
